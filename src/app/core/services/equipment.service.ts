@@ -12,4 +12,8 @@ export class EquipmentService {
   getAll() {
     return this.http.get('/api/equipments');
   }
+
+  getDetail(id: number) {
+    return this.http.get('/api/equipments/'+id);
+  }
 }

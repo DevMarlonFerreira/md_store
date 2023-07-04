@@ -7,6 +7,11 @@ const routes: Routes = [
     loadComponent: () =>
       import("../app/features/home/home.component").then((m) => m.HomeComponent),
   },
+  {
+    path: "product/:slug'",
+    loadComponent: () =>
+      import("../app/features/product/product.component").then((m) => m.ProductComponent),
+  },
 ];
 
 @NgModule({

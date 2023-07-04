@@ -1,9 +1,15 @@
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
   transition: 0.3s;
-  width: 90%;
-  padding: 0 10px;
+  /* width: 90%; */
+  /* padding: 0 10px; */
+  min-height: 400px;
+  max-height: 400px;
+  cursor: pointer;
+}
 
+.card img{
+  max-height: 200px;
 }
 
 .card:hover {
