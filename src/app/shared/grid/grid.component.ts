@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-header',
+  selector: 'app-grid',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  templateUrl: './grid.component.html',
+  styleUrls: ['./grid.component.css']
 })
-export class HeaderComponent {
+export class GridComponent {
 
 }

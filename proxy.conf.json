@@ -1,0 +1,11 @@
+{
+  "/api/equipments": {
+    "target":  "https://mandalorian-store.netlify.app",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "http://localhost:4200": "https://mandalorian-store.netlify.app"
+    }
+  }
+}
