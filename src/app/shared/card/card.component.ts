@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy } from "@angular/core";
+import { Component, Input, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 // import { Equipment } from '../../core/models/equipment.model';
 import { Router } from '@angular/router';
@@ -8,15 +8,15 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './card.component.html',
-  styleUrls: ['./card.component.css']
+  styleUrls: ['./card.component.css'],
 })
 export class CardComponent {
   @Input() item: any = {};
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
 
-  navigate(path: string, id: number){
-    const route = `${path}/${id}`
-    this.router.navigate([route])
+  navigate(path: string, id: number) {
+    const route = `${path}/${id}`;
+    this.router.navigate([route], { queryParams: { id } });
   }
 
   // setListTo(type: string = "", filters: Object = {}): void {

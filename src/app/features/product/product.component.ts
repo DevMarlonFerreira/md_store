@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, ActivatedRoute } from '@angular/router';
+import { CardComponent } from '../../shared/card/card.component';
+import { DetailsComponent } from '../../shared/details/details.component';
+
 
 import { EquipmentService } from '../../core/services/equipment.service';
 import { Equipment } from '../../core/models/equipment.model';
@@ -8,12 +11,12 @@ import { Equipment } from '../../core/models/equipment.model';
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, CardComponent, DetailsComponent],
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css'],
 })
 export class ProductComponent {
-  equipments: Equipment = {
+  equipment: Equipment = {
     id: '',
     name: '',
     description: '',
@@ -30,11 +33,10 @@ export class ProductComponent {
   ) {}
 
   ngOnInit(): void {
-    console.log(this.route.snapshot.params);
-    const aff = this.route.snapshot.params
-    console.log(aff['slug']);
-    this.equipmentService.getAll().subscribe((equipments: any) => {
-      this.equipments = equipments;
-    });
+    const id = this.route.snapshot.paramMap.get('slug');
+    if (id)
+      this.equipmentService.getDetail(id).subscribe((equipment: any) => {
+        this.equipment = equipment;
+      });
   }
 }

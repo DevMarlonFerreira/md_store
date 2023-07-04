@@ -1,0 +1,21 @@
+<div class="title">
+  {{ item.name }}
+</div>
+
+<div class="row">
+  <div class="column" style="background-color: #aaa">
+    <img src="{{ item.image }}" alt="{{ item.name }}" style="width: 100%" />
+  </div>
+  <div class="column" style="background-color: #bbb">
+    <h1>{{ item.name }}</h1>
+    <h2>{{ item.price | currency : "BRL" }}</h2>
+    <p>{{ item.description }}</p>
+    <p>{{ item.rating }}/5</p>
+    <ng-container *ngIf="item.isAvailable; else notAvailable">
+      <button>Comprar</button>
+    </ng-container>
+    <ng-template #notAvailable>
+      <button>Indisponível</button>
+    </ng-template>
+  </div>
+</div>

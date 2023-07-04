@@ -13,7 +13,7 @@ export class EquipmentService {
     return this.http.get('/api/equipments');
   }
 
-  getDetail(id: number) {
+  getDetail(id: string | number) {
     return this.http.get('/api/equipments/'+id);
   }
 }
