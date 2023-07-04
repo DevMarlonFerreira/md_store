@@ -5,13 +5,17 @@ import { takeUntil, tap, catchError } from 'rxjs/operators';
 import { CommonModule } from '@angular/common';
 import { ContainerComponent } from '../../shared/container/container.component';
 import { HeroComponent } from '../../shared/hero/hero.component';
+import { GridComponent } from '../../shared/grid/grid.component';
+
+import { CardComponent } from '../../shared/card/card.component';
+
 import { EquipmentService } from '../../core/services/equipment.service';
 import { Equipment } from '../../core/models/equipment.model';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, ContainerComponent, HeroComponent],
+  imports: [CommonModule, ContainerComponent, HeroComponent, CardComponent, GridComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
@@ -30,17 +34,9 @@ export class HomeComponent {
   ) {}
 
   ngOnInit(): void {
-    // const slug = this.route.snapshot.params["slug"];
     this.equipmentService
       .getAll()
-      // .pipe(
-      //   catchError((err) => {
-      //     // void this.router.navigate(['/']);
-      //     return throwError(() => err.error);
-      //   })
-      // )
       .subscribe((equipments: any) => {
-        console.log(equipments)
         this.equipments = equipments;
       });
   }

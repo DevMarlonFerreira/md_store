@@ -1,1 +1,8 @@
-<p>grid works!</p>
+<div class="grid-container">
+  <div *ngFor="let item of itens">
+    <app-card class="grid-item" [item]="item">
+    </app-card>
+  </div>
+</div>
+
+

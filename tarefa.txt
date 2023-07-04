@@ -1,0 +1,45 @@
+
+Mandalorian Store
+Nosso renegado Mandalorian, Din Djarin, e seu pequeno companheiro Grogu, da Guilda Mandaloriana, precisam da sua ajuda para desenvolver um site que permita a seus colegas caçadores de recompensas, até mesmo aqueles na periferia da galáxia, fazer solicitações de equipamentos e suprimentos em grandes quantidades.
+
+Anteriormente, eles trabalharam com um engenheiro de backend intergalático para configurar uma API em REST.
+
+Requisitos
+Os caçadores de recompensas podem fazer pedidos através de comunicação intergaláctica, então, no mínimo, os usuários do site devem ser capazes de:
+
+Explorar uma lista de equipamentos
+Visualizar detalhes do equipamento
+Opcional
+E, se houver tempo, os seguintes recursos seriam ótimos para lançar na primeira versão:
+
+Adicionar equipamentos ao carrinho de pedidos 🛒
+Realizar um pedido
+Documentação da API
+Aqui estão os endpoints REST:
+
+Listar equipamentos
+GET /api/equipments
+GET /api/equipments?
+search=blaster
+minRating=3
+maxRating=5
+minPrice=5
+maxPrice=25
+isAvailable=true
+orderBy=name
+sort=DESC
+
+Detalhes do equipamento
+GET /api/equipments/[id]
+GET /api/equipments/1e780016-94ef-4063-9fbb-fbafbabb636e
+
+Enviar pedido
+POST /api/orders
+ {
+    "name": "Din Djarin",
+    "deliveryAddress": "Razor Crest, Outer Rim Territories",
+    "items": [{
+      "productId": "b0cc414e-7a03-428c-81ae-5c472ca11cdc",
+      "quantity": 5
+    }]
+  }
