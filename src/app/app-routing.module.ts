@@ -8,6 +8,11 @@ const routes: Routes = [
       import("../app/features/home/home.component").then((m) => m.HomeComponent),
   },
   {
+    path: "products",
+    loadComponent: () =>
+      import("../app/features/products/products.component").then((m) => m.ProductsComponent),
+  },
+  {
     path: "product/:slug",
     loadComponent: () =>
       import("../app/features/product/product.component").then((m) => m.ProductComponent),
