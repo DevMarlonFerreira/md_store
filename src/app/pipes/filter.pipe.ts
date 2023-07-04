@@ -1,5 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
+enum Sort {
+  DESC,
+  ASC,
+}
+
 @Pipe({ name: 'appFilter' })
 export class FilterPipe implements PipeTransform {
   /**
@@ -9,17 +14,41 @@ export class FilterPipe implements PipeTransform {
    * @param searchText search string
    * @returns list of elements filtered by search text or []
    */
-  transform(items: any[], searchText: string): any[] {
-    if (!items) {
-      return [];
+  transform(
+    search?: string,
+    minRating?: number,
+    maxRating?: number,
+    minPrice?: number,
+    maxPrice?: number,
+    isAvailable?: boolean,
+    orderBy?: string,
+    sort?: Sort
+  ) {
+    let text = '';
+    if (search) {
+      text = `${text}&search=${search}`;
     }
-    if (!searchText) {
-      return items;
+    if (minRating) {
+      text = `${text}&minRating=${minRating}`;
     }
-    searchText = searchText.toLocaleLowerCase();
-
-    return items.filter(it => {
-      return it.toLocaleLowerCase().includes(searchText);
-    });
+    if (maxRating) {
+      text = `${text}&maxRating=${maxRating}`;
+    }
+    if (minPrice) {
+      text = `${text}&minPrice=${minPrice}`;
+    }
+    if (maxPrice) {
+      text = `${text}&maxPrice=${maxPrice}`;
+    }
+    if (isAvailable) {
+      text = `${text}&isAvailable=${isAvailable}`;
+    }
+    if (orderBy) {
+      text = `${text}&orderBy=${orderBy}`;
+    }
+    if (sort) {
+      text = `&sort=${sort}`;
+    }
+    return text;
   }
 }

@@ -13,6 +13,10 @@ export class EquipmentService {
     return this.http.get('/api/equipments');
   }
 
+  getFilter(params: string) {
+    return this.http.get(`/api/equipments?${params}`);
+  }
+
   getDetail(id: string | number) {
     return this.http.get('/api/equipments/'+id);
   }
