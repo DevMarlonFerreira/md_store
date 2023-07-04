@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-list',
+  selector: 'app-filter',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './list.component.html',
-  styleUrls: ['./list.component.css']
+  templateUrl: './filter.component.html',
+  styleUrls: ['./filter.component.css']
 })
-export class ListComponent {
+export class FilterComponent {
 
 }

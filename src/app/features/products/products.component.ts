@@ -7,11 +7,12 @@ import { EquipmentService } from '../../core/services/equipment.service';
 import { Equipment } from '../../core/models/equipment.model';
 import { GridComponent } from '../../shared/grid/grid.component';
 import { ContainerComponent } from '../../shared/container/container.component';
+import { FilterComponent } from '../../shared/filter/filter.component';
 
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [CommonModule, GridComponent, ContainerComponent],
+  imports: [CommonModule, GridComponent, ContainerComponent, FilterComponent],
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css'],
 })
