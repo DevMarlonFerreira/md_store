@@ -7,7 +7,6 @@ import { EquipmentService } from '../../core/services/equipment.service';
 import { Equipment } from '../../core/models/equipment.model';
 import { GridComponent } from '../../shared/grid/grid.component';
 import { ContainerComponent } from '../../shared/container/container.component';
-import { FilterComponent } from '../../shared/filter/filter.component';
 import { FilterPipe } from '../../pipes/filter.pipe';
 
 @Component({
@@ -18,7 +17,6 @@ import { FilterPipe } from '../../pipes/filter.pipe';
     FormsModule,
     GridComponent,
     ContainerComponent,
-    FilterComponent,
   ],
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css'],
@@ -70,6 +68,4 @@ export class ProductsComponent {
       this.equipments = equipments;
     });
   }
-
-
 }
