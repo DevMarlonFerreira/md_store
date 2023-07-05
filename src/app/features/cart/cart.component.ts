@@ -55,10 +55,8 @@ export class CartComponent {
       deliveryAddress: this.address,
       items: this.cart,
     };
-    this.orderService.execute(order).subscribe((result: any) => {
+    this.orderService.execute(order).subscribe((_: any) => {
     this.show = true;
-
-    console.log(result)
 
     setTimeout(() => {
       this.router.navigate(['/']);
