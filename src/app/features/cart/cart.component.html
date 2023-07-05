@@ -1,24 +1,30 @@
 <app-grid [itens]="equipments"> </app-grid>
 <div class="form-style-6">
-  <form>
-    <input
-      type="text"
-      id="name"
-      name="name"
-      placeholder="Nome do comprador"
-      [(ngModel)]="name"
-    />
-    <input
-      type="text"
-      id="address"
-      name="address"
-      placeholder="Endereço de entrega"
-      [(ngModel)]="address"
-    />
-    <input (click)="purchase()" type="submit" value="Fechar compra" />
-  </form>
+  <ng-container *ngIf="cart.length > 0; else notAvailable">
+    <form>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Nome do comprador"
+        [(ngModel)]="name"
+      />
+      <input
+        type="text"
+        id="address"
+        name="address"
+        placeholder="Endereço de entrega"
+        [(ngModel)]="address"
+      />
+      <input (click)="purchase()" type="submit" value="Fechar compra" />
+    </form>
+  </ng-container>
 
   <ng-container *ngIf="show">
     <div class="show">Compra finalizada</div>
   </ng-container>
+
+  <ng-template #notAvailable>
+    <div class="show">Carrinho vazio</div>
+  </ng-template>
 </div>
