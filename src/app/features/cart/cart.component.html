@@ -1,4 +1,13 @@
 Seu carrinho
 <app-grid [itens]="equipments"> </app-grid>
 
-<button>Fechar compra</button>
+
+
+<label for="fname">Nome do comprador:</label>
+<input type="text" id="name" name="name" [(ngModel)]="name" />
+
+<label for="fname">Endereço de entrega:</label>
+<input type="text" id="address" name="address" [(ngModel)]="address" />
+
+
+<button (click)="purchase()">Fechar compra</button>
