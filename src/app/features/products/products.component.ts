@@ -1,10 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { tap } from 'rxjs/operators';
 import { Subject } from 'rxjs';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormsModule, FormBuilder, FormGroup } from '@angular/forms';
 
 import { EquipmentService } from '../../core/services/equipment.service';
 import { Equipment } from '../../core/models/equipment.model';
@@ -30,13 +27,8 @@ import { FilterPipe } from '../../pipes/filter.pipe';
 export class ProductsComponent {
   equipments: Equipment[] = [];
 
-  equipments$ = inject(EquipmentService)
-    .getAll()
-    .pipe(tap(() => (this.equipmentsLoaded = true)));
-  equipmentsLoaded = false;
   destroy$ = new Subject<void>();
 
-  public userForm: FormGroup;
   search?: string = '';
   minRating?: number;
   maxRating?: number;
@@ -50,11 +42,7 @@ export class ProductsComponent {
     private readonly equipmentService: EquipmentService,
     private fb: FormBuilder,
     private filterPipe: FilterPipe
-  ) {
-    this.userForm = this.fb.group({
-      first_name: '',
-    });
-  }
+  ) {}
 
   filter() {
     const params = this.filterPipe.transform(
@@ -65,9 +53,8 @@ export class ProductsComponent {
       this.maxPrice,
       this.isAvailable,
       this.orderBy,
-      this.sort,
+      this.sort
     );
-    console.log(params);
 
     this.equipmentService.getFilter(params).subscribe((equipments: any) => {
       this.equipments = equipments;
@@ -83,16 +70,5 @@ export class ProductsComponent {
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
-  }
-
-  setValue() {
-    this.search = this.userForm.get('search')?.value;
-    this.minRating = this.userForm.get('minRating')?.value;
-    this.maxRating = this.userForm.get('maxRating')?.value;
-    this.minPrice = this.userForm.get('minPrice')?.value;
-    this.maxPrice = this.userForm.get('maxPrice')?.value;
-    this.isAvailable = this.userForm.get('isAvailable')?.value;
-    this.orderBy = this.userForm.get('orderBy')?.value;
-    this.sort = this.userForm.get('sort')?.value;
   }
 }
