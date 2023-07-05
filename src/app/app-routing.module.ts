@@ -17,6 +17,11 @@ const routes: Routes = [
     loadComponent: () =>
       import("../app/features/product/product.component").then((m) => m.ProductComponent),
   },
+  {
+    path: "cart",
+    loadComponent: () =>
+      import("../app/features/cart/cart.component").then((m) => m.CartComponent),
+  }
 ];
 
 @NgModule({

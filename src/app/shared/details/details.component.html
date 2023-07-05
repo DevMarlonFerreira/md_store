@@ -8,7 +8,17 @@
     <p>{{ item.description }}</p>
     <p>{{ item.rating }}/5</p>
     <ng-container *ngIf="item.isAvailable; else notAvailable">
-      <button>Comprar</button>
+      <div>
+        <label for="fname">Quantidade:</label>
+        <input
+          type="number"
+          id="quantity"
+          name="quantity"
+          min="1"
+          [(ngModel)]="quantity"
+        />
+      </div>
+      <button (click)="handlerCart()">Comprar</button>
     </ng-container>
     <ng-template #notAvailable>
       <button disabled>Indisponível</button>
