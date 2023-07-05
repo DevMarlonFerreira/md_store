@@ -1,44 +1,63 @@
 <app-container>
-  <h2>FILTRAR POR</h2>
-  <label for="fname">Nome:</label>
-  <input type="text" id="search" name="search" [(ngModel)]="search" />
-  <label for="fname">Avaliação mínima:</label>
-  <input
-    type="number"
-    id="minRating"
-    name="minRating"
-    min="1"
-    max="5"
-    [(ngModel)]="minRating"
-  />
-  <label for="fname">Avaliação máxima:</label>
-  <input
-    type="number"
-    id="maxRating"
-    name="maxRating"
-    min="1"
-    max="5"
-    [(ngModel)]="maxRating"
-  />
-  <label for="fname">Preço mínimo:</label>
-  <input type="number" id="minPrice" name="minPrice" [(ngModel)]="minPrice" />
-  <label for="fname">Preço máximo:</label>
-  <input type="number" id="maxPrice" name="maxPrice" [(ngModel)]="maxPrice" />
-  <label for="fname">Disponível:</label>
-  <input
-    type="checkbox"
-    id="isAvailable"
-    name="isAvailable"
-    [(ngModel)]="isAvailable"
-  />
-  <label for="fname">Ordenação:</label>
-  <input type="text" id="orderBy" name="orderBy" [(ngModel)]="orderBy" />
-  <label for="fname">Ordem alfabética:</label>
-  <select id="orderBy" name="orderBy" [(ngModel)]="sort">
-    <option value="ASC">Ascendente</option>
-    <option value="DESC">Descendente</option>
-  </select>
-
+  <div>
+    <h6>FILTRAR POR</h6>
+    <form>
+      <span class="row">
+        <label for="fname">Nome:</label>
+        <input type="text" id="search" name="search" [(ngModel)]="search" />
+        <label for="fname">Ordenação:</label>
+        <input type="text" id="orderBy" name="orderBy" [(ngModel)]="orderBy" />
+        <label for="fname">Ordem alfabética:</label>
+        <select id="orderBy" name="orderBy" [(ngModel)]="sort">
+          <option value="ASC">Ascendente</option>
+          <option value="DESC">Descendente</option>
+        </select>
+      </span>
+      <span class="row">
+        <label for="fname">Avaliação mínima:</label>
+        <input
+          type="number"
+          id="minRating"
+          name="minRating"
+          min="1"
+          max="5"
+          [(ngModel)]="minRating"
+        />
+        <label for="fname">Avaliação máxima:</label>
+        <input
+          type="number"
+          id="maxRating"
+          name="maxRating"
+          min="1"
+          max="5"
+          [(ngModel)]="maxRating"
+        />
+      </span>
+      <span class="row">
+        <label for="fname">Preço mínimo:</label>
+        <input
+          type="number"
+          id="minPrice"
+          name="minPrice"
+          [(ngModel)]="minPrice"
+        />
+        <label for="fname">Preço máximo:</label>
+        <input
+          type="number"
+          id="maxPrice"
+          name="maxPrice"
+          [(ngModel)]="maxPrice"
+        />
+        <label for="fname">Disponível:</label>
+        <input
+          type="checkbox"
+          id="isAvailable"
+          name="isAvailable"
+          [(ngModel)]="isAvailable"
+        />
+      </span>
+    </form>
+  </div>
   <button type="button" (click)="filter()">Filtrar</button>
 
   <app-grid [itens]="equipments"> </app-grid>
