@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { GridComponent } from '../../shared/grid/grid.component';
 
@@ -28,7 +29,10 @@ export class CartComponent {
   name: string = '';
   address: string = '';
 
+  show: boolean = false;
+
   constructor(
+    private router: Router,
     private equipmentService: EquipmentService,
     private orderService: OrderService,
     private cartService: CartService,
@@ -52,9 +56,12 @@ export class CartComponent {
       deliveryAddress: this.address,
       items: this.cart,
     };
-    console.log(order)
     this.orderService.execute(order).subscribe((result: any) => {
-      console.log(result)
+    this.show = true;
+
+    setTimeout(() => {
+      this.router.navigate(['/']);
+    }, 3000);
     });
   }
 }

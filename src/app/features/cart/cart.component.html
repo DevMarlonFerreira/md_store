@@ -17,4 +17,8 @@
     />
     <input (click)="purchase()" type="submit" value="Fechar compra" />
   </form>
+
+  <ng-container *ngIf="show">
+    <div class="show">Compra finalizada</div>
+  </ng-container>
 </div>

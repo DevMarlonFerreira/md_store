@@ -27,5 +27,8 @@
     <ng-template #notAvailable>
       <button disabled>Indisponível</button>
     </ng-template>
+    <ng-container *ngIf="show">
+      <div class="show">Adicionado ao carrinho</div>
+    </ng-container>
   </div>
 </div>
