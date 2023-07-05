@@ -6,11 +6,6 @@ import { Cart } from '../models/cart.model';
 })
 export class CartService {
   cart: Cart[] = [];
-  item: Cart = {
-    productId: '',
-    name: '',
-    quantity: 0,
-  };
 
   constructor() {}
 
@@ -26,5 +21,9 @@ export class CartService {
 
   get(): Cart[] {
     return this.cart;
+  }
+
+  destroy(): void {
+    this.cart = [];
   }
 }

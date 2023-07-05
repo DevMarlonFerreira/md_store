@@ -58,6 +58,8 @@ export class CartComponent {
     this.orderService.execute(order).subscribe((_: Cart) => {
       this.show = true;
 
+      this.cartService.destroy();
+
       setTimeout(() => {
         this.router.navigate(['/']);
       }, 3000);
