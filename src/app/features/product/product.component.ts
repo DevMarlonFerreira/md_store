@@ -36,7 +36,7 @@ export class ProductComponent {
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('slug');
     if (id)
-      this.equipmentService.getDetail(id).subscribe((equipment: any) => {
+      this.equipmentService.getDetail(id).subscribe((equipment: Equipment) => {
         this.equipment = equipment;
       });
   }

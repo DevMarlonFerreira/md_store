@@ -2,6 +2,8 @@ import { Component, Input, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 
+import { Equipment } from '../../core/models/equipment.model';
+
 @Component({
   selector: 'app-card',
   standalone: true,

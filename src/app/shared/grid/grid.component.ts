@@ -2,6 +2,8 @@ import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { CardComponent } from '../../shared/card/card.component';
+import { Equipment } from '../../core/models/equipment.model';
+
 
 @Component({
   selector: 'app-grid',
