@@ -1,6 +1,5 @@
 import { Component, Input, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-// import { Equipment } from '../../core/models/equipment.model';
 import { Router } from '@angular/router';
 
 @Component({
@@ -18,14 +17,4 @@ export class CardComponent {
     const route = `${path}/${id}`;
     this.router.navigate([route], { queryParams: { id } });
   }
-
-  // setListTo(type: string = "", filters: Object = {}): void {
-  //   if (type === "feed" && !this.isAuthenticated) {
-  //     void this.router.navigate(["/login"]);
-  //     return;
-  //   }
-
-  //   // Otherwise, set the list object
-  //   this.listConfig = { type: type, filters: filters };
-  // }
 }
