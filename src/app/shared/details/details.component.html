@@ -7,19 +7,24 @@
     <h2>{{ item.price | currency : "BRL" }}</h2>
     <p>{{ item.description }}</p>
     <p>{{ item.rating }}/5</p>
-    <ng-container *ngIf="item.isAvailable; else notAvailable">
-      <div>
-        <label for="fname">Quantidade:</label>
-        <input
-          type="number"
-          id="quantity"
-          name="quantity"
-          min="1"
-          [(ngModel)]="quantity"
-        />
-      </div>
-      <button (click)="handlerCart()">Comprar</button>
-    </ng-container>
+    <div class="form-style-6">
+      <form>
+        <ng-container *ngIf="item.isAvailable; else notAvailable">
+          <div>
+            <label for="fname">Quantidade:</label>
+            <input
+              type="number"
+              id="quantity"
+              name="quantity"
+              min="1"
+              [(ngModel)]="quantity"
+            />
+          </div>
+          <input (click)="handlerCart()" type="submit" value="Comprar" />
+          <!-- <button (click)="handlerCart()">Comprar</button> -->
+        </ng-container>
+      </form>
+    </div>
     <ng-template #notAvailable>
       <button disabled>Indisponível</button>
     </ng-template>
