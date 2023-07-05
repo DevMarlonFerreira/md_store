@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 import { EquipmentService } from '../../core/services/equipment.service';
@@ -21,7 +20,6 @@ export class HomeComponent {
   equipments: Equipment[] = [];
 
   constructor(
-    private readonly router: Router,
     private readonly equipmentService: EquipmentService
   ) {}
 
