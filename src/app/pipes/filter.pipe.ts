@@ -22,7 +22,7 @@ export class FilterPipe implements PipeTransform {
     maxPrice?: number,
     isAvailable?: boolean,
     orderBy?: string,
-    sort?: Sort
+    sort?: string
   ) {
     let text = '';
     if (search) {
@@ -47,7 +47,7 @@ export class FilterPipe implements PipeTransform {
       text = `${text}&orderBy=${orderBy}`;
     }
     if (sort) {
-      text = `&sort=${sort}`;
+      text = `${text}&sort=${sort}`;
     }
     return text;
   }

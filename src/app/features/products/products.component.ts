@@ -44,7 +44,7 @@ export class ProductsComponent {
   maxPrice?: number;
   isAvailable?: boolean;
   orderBy?: string = '';
-  sort?: string = 'DESC';
+  sort?: string = '';
 
   constructor(
     private readonly equipmentService: EquipmentService,
@@ -65,6 +65,7 @@ export class ProductsComponent {
       this.maxPrice,
       this.isAvailable,
       this.orderBy,
+      this.sort,
     );
     console.log(params);
 
@@ -85,7 +86,6 @@ export class ProductsComponent {
   }
 
   setValue() {
-    console.log(this.userForm.get('search')?.value);
     this.search = this.userForm.get('search')?.value;
     this.minRating = this.userForm.get('minRating')?.value;
     this.maxRating = this.userForm.get('maxRating')?.value;
