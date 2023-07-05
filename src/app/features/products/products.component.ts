@@ -26,12 +26,7 @@ import { Equipment } from '../../core/models/equipment.model';
 export class ProductsComponent {
   equipments: Equipment[] = [];
 
-  ngOnInit(): void {
-    this.equipmentService.getAll().subscribe((equipments: any) => {
-      this.equipments = equipments;
-    });
-  }
-
+  // FILTRO
   search?: string = '';
   minRating?: number;
   maxRating?: number;
@@ -40,6 +35,12 @@ export class ProductsComponent {
   isAvailable?: boolean;
   orderBy?: string = '';
   sort?: string = '';
+
+  ngOnInit(): void {
+    this.equipmentService.getAll().subscribe((equipments: any) => {
+      this.equipments = equipments;
+    });
+  }
 
   constructor(
     private readonly equipmentService: EquipmentService,
