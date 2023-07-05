@@ -1,4 +1,7 @@
-.main {
-  display: flex;
-	flex-flow: row wrap;
+.hero {
+  /* display: flex;
+	justify-content: space-around; */
+  background-image: linear-gradient(0deg, transparent, black 75%);
+  border-bottom: solid;
+  margin-bottom: 10px;
 }

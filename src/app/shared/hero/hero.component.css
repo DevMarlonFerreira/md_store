@@ -1,13 +1,21 @@
+.style {
+  padding-bottom: 10px;
+  border-bottom: solid;
+}
+
 .hero-image {
-  background-image: url("https://wallpapercrafter.com/th8001/533824-Star-Wars-1313-Mercenary-Coruscant-2K.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(5, 0, 0, 0.5)), url("https://wallpapercrafter.com/th8001/533824-Star-Wars-1313-Mercenary-Coruscant-2K.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  /* width: 100%; */
+  width: 100%;
   height: 400px;
   background-size: contain;
 }
+
+/* linear-gradient(0deg, transparent, black 75%) */
+/* linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)) */
 
 .hero-text {
   text-align: center;

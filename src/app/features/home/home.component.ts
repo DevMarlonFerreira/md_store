@@ -9,10 +9,12 @@ import { GridComponent } from '../../shared/grid/grid.component';
 import { EquipmentService } from '../../core/services/equipment.service';
 import { Equipment } from '../../core/models/equipment.model';
 
+import { StarwarsComponent } from '../../shared/starwars/starwars.component';
+
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, ContainerComponent, HeroComponent, GridComponent],
+  imports: [CommonModule, ContainerComponent, HeroComponent, StarwarsComponent, GridComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
