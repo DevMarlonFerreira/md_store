@@ -11,7 +11,7 @@ import { FilterPipe } from '../../pipes/filter.pipe';
 import { GridComponent } from '../../shared/grid/grid.component';
 
 import { Cart } from '../../core/models/cart.model';
-import { Equipment } from '../../core/models/equipment.model';
+import { EquipmentCartShow } from '../../core/models/equipment.model';
 
 @Component({
   selector: 'app-cart',
@@ -23,7 +23,7 @@ import { Equipment } from '../../core/models/equipment.model';
 })
 export class CartComponent {
   cart: Cart[] = [];
-  equipments: Equipment[] = [];
+  equipments: EquipmentCartShow[] = [];
 
   name: string = '';
   address: string = '';
@@ -43,7 +43,7 @@ export class CartComponent {
 
     this.cart.map((item) => {
       const params = this.filterPipe.transform(item.name);
-      this.equipmentService.getFilter(params).subscribe((equipments: any) => {
+      this.equipmentService.getFilter(params).subscribe((equipments) => {
         this.equipments.push({ ...equipments[0], quantity: item.quantity });
       });
     });
@@ -55,12 +55,12 @@ export class CartComponent {
       deliveryAddress: this.address,
       items: this.cart,
     };
-    this.orderService.execute(order).subscribe((_: any) => {
-    this.show = true;
+    this.orderService.execute(order).subscribe((_: Cart) => {
+      this.show = true;
 
-    setTimeout(() => {
-      this.router.navigate(['/']);
-    }, 3000);
+      setTimeout(() => {
+        this.router.navigate(['/']);
+      }, 3000);
     });
   }
 }

@@ -26,7 +26,7 @@ export class HomeComponent {
   ngOnInit(): void {
     this.equipmentService
       .getAll()
-      .subscribe((equipments: any) => {
+      .subscribe((equipments) => {
         this.equipments = equipments;
       });
   }

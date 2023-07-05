@@ -1,7 +1,10 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+
 import { CartService } from '../../core/services/cart.service';
+
+import { Equipment } from '../../core/models/equipment.model';
 
 @Component({
   selector: 'app-details',
@@ -15,7 +18,15 @@ export class DetailsComponent {
 
   show: boolean = false;
 
-  @Input() item: any = {};
+  @Input() item: Equipment = {
+    id: '',
+    name: '',
+    description: '',
+    image: '',
+    price: 0,
+    isAvailable: false,
+    rating: 0
+  };
   constructor(private cartService: CartService) {}
 
   handlerCart() {

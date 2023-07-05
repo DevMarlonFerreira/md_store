@@ -37,7 +37,7 @@ export class ProductsComponent {
   sort?: string = '';
 
   ngOnInit(): void {
-    this.equipmentService.getAll().subscribe((equipments: any) => {
+    this.equipmentService.getAll().subscribe((equipments) => {
       this.equipments = equipments;
     });
   }
@@ -59,7 +59,7 @@ export class ProductsComponent {
       this.sort
     );
 
-    this.equipmentService.getFilter(params).subscribe((equipments: any) => {
+    this.equipmentService.getFilter(params).subscribe((equipments) => {
       this.equipments = equipments;
     });
   }
