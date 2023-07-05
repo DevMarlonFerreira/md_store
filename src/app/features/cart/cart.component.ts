@@ -44,8 +44,6 @@ export class CartComponent {
         this.equipments.push({ ...equipments[0], quantity: item.quantity });
       });
     });
-
-    console.log(this.equipments);
   }
 
   purchase() {
@@ -54,10 +52,9 @@ export class CartComponent {
       deliveryAddress: this.address,
       items: this.cart,
     };
-    console.log(order);
-
-    this.orderService.execute(order).subscribe((result: any) => {
-      console.log(result)
-    });
+    console.log(order)
+    // this.orderService.execute(order).subscribe((result: any) => {
+    //   console.log(result)
+    // });
   }
 }
