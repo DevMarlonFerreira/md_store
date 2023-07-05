@@ -15,7 +15,6 @@ export class ApiInterceptor implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
     const apiReq = req.clone({
-      // url: `https://mandalorian-store.netlify.app/api${req.url}`,
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
       }),

@@ -53,8 +53,8 @@ export class CartComponent {
       items: this.cart,
     };
     console.log(order)
-    // this.orderService.execute(order).subscribe((result: any) => {
-    //   console.log(result)
-    // });
+    this.orderService.execute(order).subscribe((result: any) => {
+      console.log(result)
+    });
   }
 }
