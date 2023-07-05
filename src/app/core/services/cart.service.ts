@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Cart, Item } from '../models/cart.model';
+import { Cart } from '../models/cart.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CartService {
   cart: Cart[] = [];
-  item: Item = {
+  item: Cart = {
     productId: '',
     name: '',
     quantity: 0,
@@ -14,7 +14,7 @@ export class CartService {
 
   constructor() {}
 
-  handlerCart(obj: Item) {
+  handlerCart(obj: Cart) {
     const result = this.cart.find((value) => value.productId === obj.productId);
 
     if (result) {

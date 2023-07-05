@@ -4,8 +4,8 @@ export interface Cart {
   quantity: number;
 }
 
-export interface Item {
-  productId: string;
+export interface CartFinished {
   name: string;
-  quantity: number;
+  deliveryAddress: string;
+  items: Omit<Cart, 'name'>[];
 }
