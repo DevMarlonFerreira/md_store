@@ -19,7 +19,6 @@ export class DetailsComponent {
   constructor(private cartService: CartService) {}
 
   handlerCart() {
-    // console.log(this.quantity)
-    this.cartService.handlerCart({productId: this.item.id, quantity: this.quantity});
+    this.cartService.handlerCart({productId: this.item.id, name: this.item.name, quantity: this.quantity});
   }
 }

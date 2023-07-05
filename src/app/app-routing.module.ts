@@ -21,6 +21,11 @@ const routes: Routes = [
     path: "cart",
     loadComponent: () =>
       import("../app/features/cart/cart.component").then((m) => m.CartComponent),
+  },
+  {
+    path: "checkout",
+    loadComponent: () =>
+      import("../app/features/checkout/checkout.component").then((m) => m.CheckoutComponent),
   }
 ];
 

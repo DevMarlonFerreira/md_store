@@ -6,16 +6,13 @@ import { CommonModule } from '@angular/common';
 import { ContainerComponent } from '../../shared/container/container.component';
 import { HeroComponent } from '../../shared/hero/hero.component';
 import { GridComponent } from '../../shared/grid/grid.component';
-
-import { CardComponent } from '../../shared/card/card.component';
-
 import { EquipmentService } from '../../core/services/equipment.service';
 import { Equipment } from '../../core/models/equipment.model';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, ContainerComponent, HeroComponent, CardComponent, GridComponent],
+  imports: [CommonModule, ContainerComponent, HeroComponent, GridComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })

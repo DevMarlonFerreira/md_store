@@ -1,7 +1,11 @@
 <div (click)="navigate('/product', item.id)" class="card">
-  <img src={{item.image}} alt={{item.name}} style="width:100%">
-  <div class="container">
-    <h4><b>{{ item.name }}</b></h4>
-    <p>{{ item.price | currency : 'BRL' }}</p>
+  <img src="{{ item.image }}" alt="{{ item.name }}" style="width: 100%" />
+  <div>
+    <b>{{ item.name }}</b>
   </div>
+  {{ item.price | currency : "BRL" }}
+  <ng-container *ngIf="item.quantity">
+    <div class="price">Unidades: {{ item.quantity }}</div>
+    <div>Total: {{ item.price * item.quantity | currency : "BRL" }}</div>
+  </ng-container>
 </div>

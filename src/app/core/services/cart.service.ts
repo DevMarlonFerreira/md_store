@@ -8,6 +8,7 @@ export class CartService {
   cart: Cart[] = [];
   item: Item = {
     productId: '',
+    name: '',
     quantity: 0,
   };
 
@@ -16,16 +17,11 @@ export class CartService {
   handlerCart(obj: Item) {
     const result = this.cart.find((value) => value.productId === obj.productId);
 
-    // console.log(result?.quantity)
-    // console.log(obj.quantity)
-
     if (result) {
       result.quantity = obj.quantity;
     } else {
       this.cart.push(obj);
     }
-
-    console.log(this.cart)
   }
 
   get(): Cart[] {
