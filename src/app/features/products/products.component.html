@@ -5,10 +5,17 @@
       <span class="row">
         <label for="fname">Nome:</label>
         <input type="text" id="search" name="search" [(ngModel)]="search" />
+
+
         <label for="fname">Ordenação:</label>
-        <input type="text" id="orderBy" name="orderBy" [(ngModel)]="orderBy" />
+        <!-- <input type="text" id="orderBy" name="orderBy" [(ngModel)]="orderBy" /> -->
+
+        <select id="orderBy" name="orderBy" [(ngModel)]="orderBy">
+          <option value="name">Nome</option>
+        </select>
+
         <label for="fname">Ordem alfabética:</label>
-        <select id="orderBy" name="orderBy" [(ngModel)]="sort">
+        <select id="sort" name="sort" [(ngModel)]="sort">
           <option value="ASC">Ascendente</option>
           <option value="DESC">Descendente</option>
         </select>
