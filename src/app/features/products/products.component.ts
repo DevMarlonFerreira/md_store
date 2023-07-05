@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { Subject } from 'rxjs';
-import { FormsModule, FormBuilder, FormGroup } from '@angular/forms';
 
 import { EquipmentService } from '../../core/services/equipment.service';
 import { Equipment } from '../../core/models/equipment.model';
@@ -27,6 +27,17 @@ import { FilterPipe } from '../../pipes/filter.pipe';
 export class ProductsComponent {
   equipments: Equipment[] = [];
 
+  ngOnInit(): void {
+    this.equipmentService.getAll().subscribe((equipments: any) => {
+      this.equipments = equipments;
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
+  }
+
   destroy$ = new Subject<void>();
 
   search?: string = '';
@@ -40,7 +51,6 @@ export class ProductsComponent {
 
   constructor(
     private readonly equipmentService: EquipmentService,
-    private fb: FormBuilder,
     private filterPipe: FilterPipe
   ) {}
 
@@ -61,14 +71,5 @@ export class ProductsComponent {
     });
   }
 
-  ngOnInit(): void {
-    this.equipmentService.getAll().subscribe((equipments: any) => {
-      this.equipments = equipments;
-    });
-  }
 
-  ngOnDestroy(): void {
-    this.destroy$.next();
-    this.destroy$.complete();
-  }
 }
