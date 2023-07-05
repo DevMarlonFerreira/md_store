@@ -1,6 +1,4 @@
 body{
-  /* background: #000000; */
-  /* color: rgb(0, 0, 0); */
   background-image: linear-gradient(0deg, transparent, black 75%);
   color: #feda4a;
   font-family: 'Pathway Gothic One', sans-serif;
@@ -13,10 +11,8 @@ a {
 
 .form-style-6{
 	font: 95% Arial, Helvetica, sans-serif;
-	/* max-width: 400px; */
 	margin: 10px auto;
 	padding: 16px;
-	/* background: #F7F7F7; */
 }
 .form-style-6 h1{
 	background: #43D1AF;
@@ -67,7 +63,6 @@ a {
 {
 	box-shadow: 0 0 5px #43D1AF;
 	padding: 3%;
-	/* border: 1px solid #43D1AF; */
 }
 
 .form-style-6 input[type="submit"],
@@ -78,7 +73,6 @@ a {
 	width: 100%;
 	padding: 3%;
 	background: #feda4a;
-	/* border-bottom: 2px solid #feda4a; */
 	border-top-style: none;
 	border-right-style: none;
 	border-left-style: none;
