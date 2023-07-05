@@ -1,13 +1,14 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Subject } from 'rxjs';
 
 import { EquipmentService } from '../../core/services/equipment.service';
-import { Equipment } from '../../core/models/equipment.model';
+import { FilterPipe } from '../../pipes/filter.pipe';
+
 import { GridComponent } from '../../shared/grid/grid.component';
 import { ContainerComponent } from '../../shared/container/container.component';
-import { FilterPipe } from '../../pipes/filter.pipe';
+
+import { Equipment } from '../../core/models/equipment.model';
 
 @Component({
   selector: 'app-products',
@@ -30,13 +31,6 @@ export class ProductsComponent {
       this.equipments = equipments;
     });
   }
-
-  ngOnDestroy(): void {
-    this.destroy$.next();
-    this.destroy$.complete();
-  }
-
-  destroy$ = new Subject<void>();
 
   search?: string = '';
   minRating?: number;

@@ -2,8 +2,6 @@ import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CartService } from '../../core/services/cart.service';
-import { Item } from '../../core/models/cart.model';
-import { Equipment } from '../../core/models/equipment.model';
 
 @Component({
   selector: 'app-details',

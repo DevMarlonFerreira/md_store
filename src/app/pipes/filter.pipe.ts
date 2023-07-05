@@ -1,10 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-enum Sort {
-  DESC,
-  ASC,
-}
-
 @Pipe({ name: 'appFilter' })
 export class FilterPipe implements PipeTransform {
   transform(

@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, ActivatedRoute } from '@angular/router';
+
+import { EquipmentService } from '../../core/services/equipment.service';
+
 import { CardComponent } from '../../shared/card/card.component';
 import { DetailsComponent } from '../../shared/details/details.component';
 
-
-import { EquipmentService } from '../../core/services/equipment.service';
 import { Equipment } from '../../core/models/equipment.model';
 
 @Component({

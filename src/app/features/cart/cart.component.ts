@@ -3,16 +3,15 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 
+import { EquipmentService } from '../../core/services/equipment.service';
+import { OrderService } from '../../core/services/order.service';
+import { CartService } from '../../core/services/cart.service';
+import { FilterPipe } from '../../pipes/filter.pipe';
+
 import { GridComponent } from '../../shared/grid/grid.component';
 
 import { Cart } from '../../core/models/cart.model';
 import { Equipment } from '../../core/models/equipment.model';
-
-import { EquipmentService } from '../../core/services/equipment.service';
-import { OrderService } from '../../core/services/order.service';
-
-import { CartService } from '../../core/services/cart.service';
-import { FilterPipe } from '../../pipes/filter.pipe';
 
 @Component({
   selector: 'app-cart',
@@ -58,6 +57,8 @@ export class CartComponent {
     };
     this.orderService.execute(order).subscribe((result: any) => {
     this.show = true;
+
+    console.log(result)
 
     setTimeout(() => {
       this.router.navigate(['/']);
