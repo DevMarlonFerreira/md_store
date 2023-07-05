@@ -3,6 +3,8 @@
   min-height: 400px;
   max-height: 400px;
   cursor: pointer;
+  background: #ffffff;
+  /* color: rgb(255, 255, 255) */
 }
 
 .card img{
